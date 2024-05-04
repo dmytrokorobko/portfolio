@@ -3,6 +3,10 @@
    padding: 0;
 }
 
+h2 {
+   margin: 15px 0;
+}
+
 html {
    font-size: 16px;
    font-family: "Prompt", sans-serif;
@@ -11,7 +15,8 @@ html {
 }
 
 body {
-   background-color: #fafafa;
+   background-color: #dfdfdf;
+   margin: 10px 10px 0;
 }
 
 header {
@@ -19,8 +24,12 @@ header {
    flex-direction: row;
    justify-content: center;
    align-items: center;
+   align-content: center;
+   flex-wrap: wrap;
    height: 90vh;
    column-gap: 40px;
+   row-gap: 40px;
+   text-align: center;
 }
 
 header #face {
@@ -35,13 +44,13 @@ header #face {
 }
 
 header #face img {
-   width: 110%;
+   width: 115%;
 }
 
 header #header-menu {
    display: flex;
    flex-direction: column;
-   align-items: center;
+   align-items: center;   
 }
 
 header #header-menu #page-name {
@@ -57,7 +66,10 @@ header #header-menu #page-descr {
 
 header #header-menu nav ul {
    display: flex;
+   flex-wrap: wrap;
    column-gap: 30px;
+   row-gap: 20px;
+   justify-content: center;
 }
 
 header #header-menu nav ul li {
@@ -66,10 +78,18 @@ header #header-menu nav ul li {
 
 header #header-menu nav ul li a {
    text-decoration: none;
-   color: #008B69;
+   color: #0000FF;
    display: flex;
    flex-direction: column;
-   align-items: center;   
+   align-items: center;      
+   padding: 5px;
+   border-radius: 5px;
+}
+
+header #header-menu nav ul li a:hover {
+   color: #474747;
+   cursor: pointer;
+   box-shadow: 0 0 5px 5px #474747;   
 }
 
 header #header-menu nav ul li a ion-icon {
@@ -81,3 +101,81 @@ header #header-menu nav ul li a span {
    font-size: 0.9rem;
 }
 
+@media only screen and (max-width: 864px) {
+   header {
+      flex-direction: column;
+   }
+
+   header #face {
+      width: 200px;
+      height: 200px;
+   }
+}
+
+@media only screen and (max-width: 360px) {
+   header #face {
+      width: 100%;
+      height: auto;
+   }
+}
+
+main {
+   display: none;
+   margin: 40px auto;
+   max-width: 1280px;
+   background-color: #fff;
+   border-radius: 20px 20px 0 0;
+   padding: 20px 20px 20px;
+   box-shadow: 0 0 5px 5px #a7a7a7;
+}
+
+main ul {
+   margin-left: 40px;
+}
+
+#resume {
+   display: none;
+}
+
+#projects {
+   display: none;
+}
+
+#blog {
+   display: none;
+}
+
+#contacts {
+   display: none;
+}
+
+#contacts .form {
+   margin: 40px auto 0;
+   width: 50%;
+}
+
+#contacts form {
+   display: flex;
+   flex-direction: column;
+}
+
+#contacts form input, #contacts form textarea {
+   font-size: 1rem;
+   padding: 5px;
+   margin-bottom: 10px;
+}
+
+#contacts form span {
+   font-style: italic;
+   margin-top: -10px;
+   font-size: 0.9rem;
+   color: #777;
+}
+
+#contacts form #submit {
+   width: 50%;
+   margin: 20px auto;
+   padding: 20px 0;
+   border-radius: 10px;
+   border: 1px solid #000;
+}
