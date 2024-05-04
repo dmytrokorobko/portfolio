@@ -1,5 +1,5 @@
-#Dmytro Korobko's Portfolio Website 
-*Front-end only*
+# Dmytro Korobko's Portfolio Website 
+* Front-end only *
 
 Welcome to my portfolio website! This repository contains the code and assets for my personal portfolio website, where I showcase my projects, skills, and experience.
 
