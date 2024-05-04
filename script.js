@@ -32,6 +32,12 @@ const pageBlog = document.getElementById("blog");
 
 const pageContacts = document.getElementById("contacts");
 
+const messageArea = document.getElementById("message");
+messageArea.addEventListener('keyup', letterCounter);
+
+const messageCount = document.getElementById("message-count");
+const maxMessageCount = messageCount.innerHTML;
+
 //functions
 
 //get age between dates
@@ -101,6 +107,14 @@ function stylesToNone(btn) {
    pageProjects.style = 'none';
    pageBlog.style = 'none';
    pageContacts.style = 'none';
+}
+
+function sendForm() {
+   alert("This website isn't connected to server logic");
+}
+
+function letterCounter() {
+   messageCount.innerHTML = maxMessageCount - messageArea.value.length;
 }
 
 //execution

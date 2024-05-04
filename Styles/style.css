@@ -141,6 +141,30 @@ main ul {
    display: none;
 }
 
+#projects .grid-container {
+   display: grid;
+   grid-template-columns: repeat(auto-fit, 400px);
+   grid-template-rows: auto;
+   grid-gap: 20px;     
+}
+
+#projects .grid-container .item {
+   border: 1px solid #47474733;
+   padding: 20px;
+   border-radius: 10px;
+   display: flex;   
+   flex-direction: column;
+   justify-content: space-between;
+}
+
+#projects .grid-container .item:hover {
+   box-shadow: 0 0 5px 5px #a7a7a733;
+}
+
+#projects .grid-container .item p:first-child {
+   margin-bottom: 10px;
+}
+
 #blog {
    display: none;
 }
@@ -178,4 +202,16 @@ main ul {
    padding: 20px 0;
    border-radius: 10px;
    border: 1px solid #000;
+}
+
+#contacts form #submit:hover {
+   cursor: pointer;
+   box-shadow: 0 0 5px 5px #474747; 
+   font-weight: 700;
+}
+
+#contacts form #submit:active {
+   cursor: pointer;
+   box-shadow: 0 0 5px 5px #0000FF; 
+   font-weight: 700;
 }
