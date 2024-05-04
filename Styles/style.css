@@ -41,6 +41,7 @@ header #face {
    align-items: center;
    overflow: hidden;
    border: 15px solid #fff;
+   cursor: pointer;
 }
 
 header #face img {

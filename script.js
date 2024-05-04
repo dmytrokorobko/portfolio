@@ -21,6 +21,7 @@ const btnArray = [btnResume, btnProjects, btnBlog, btnContacts];
 const header = document.getElementsByTagName("header")[0];
 
 const faceImg = document.getElementById("face");
+faceImg.addEventListener('click', goToMain);
 
 const pageMain = document.getElementsByTagName("main")[0];
 
@@ -50,19 +51,15 @@ function getMyAge() {
 function btnHandler(e) {
    const btn = e.target.parentNode;   
    btnChange(btn);
-   switch(btn.getAttribute('id')) {
-      case "btnResume": 
-         console.log("btnResume");
-         break;
-   }
 }
 
 //toggle selected btn color
 function btnChange(btn) {
    btnOff(btnArray, btn);
    //toggle color
-   if (btn.getAttribute('style') != null && btn.getAttribute('style').indexOf('color:') != -1) {
-      stylesToNone(btn);
+   if (btn.getAttribute('style') != null && btn.getAttribute('style').indexOf('color:') != -1) {  
+      btnStylesToNone(btn);    
+      stylesToNone();
    } else {
       btn.style.color = clickedColor;
       btn.style.boxShadow = "0 0 5px 5px " + clickedColor;
@@ -93,13 +90,24 @@ function changeFaceSize() {
 function btnOff(btnArray, btnClicked) {
    btnArray.forEach(btn => {
       if (btn != btnClicked && btn.getAttribute('style') != null && btn.getAttribute('style').indexOf('color:') != -1) {
-         stylesToNone(btn);
+         btnStylesToNone(btn);
       }   
    });
+   stylesToNone();
 }
 
-function stylesToNone(btn) {
+function allBtnOff(btnArray) {
+   btnArray.forEach(btn => {
+      btnStylesToNone(btn);
+   });
+   stylesToNone();
+}
+
+function btnStylesToNone(btn) {
    btn.style = 'none';
+}
+
+function stylesToNone() {   
    header.style = 'none';
    faceImg.style = 'none';
    pageMain.style = 'none';
@@ -107,6 +115,10 @@ function stylesToNone(btn) {
    pageProjects.style = 'none';
    pageBlog.style = 'none';
    pageContacts.style = 'none';
+}
+
+function goToMain() {
+   allBtnOff(btnArray);
 }
 
 function sendForm() {
