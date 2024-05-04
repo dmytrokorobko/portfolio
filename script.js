@@ -49,7 +49,10 @@ function getMyAge() {
 
 //clicked buttons handlers
 function btnHandler(e) {
-   const btn = e.target.parentNode;   
+   let btn = e.target;   
+   if (btn.tagName != 'A') {
+      btn = btn.parentNode;
+   } 
    btnChange(btn);
 }
 
@@ -71,19 +74,26 @@ function btnChange(btn) {
          header.style.justifyContent = "start";
 
       //show page
-      pageMain.style.display = 'block';
-      document.getElementById((btn.getAttribute('id')).substring(3).toLowerCase()).style.display = 'block';
+      if (btn != null && btn.getAttribute('id') != null) {
+         pageMain.style.display = 'block';
+         document.getElementById((btn.getAttribute('id')).substring(3).toLowerCase()).style.display = 'block';
+      } else {
+         console.log("Something wrong");
+         allBtnOff(btnArray);
+      }
    }
 }
 
 function changeFaceSize() {
    const faceSize = window.getComputedStyle(faceImg);
-   const w = faceSize.getPropertyValue('width');
-   const w1 = w.substring(0, w.length - 2);
-   const h = faceSize.getPropertyValue('height');
-   const h1 = h.substring(0, w.length - 2);
-   faceImg.style.width = w1 / 2 + "px";
-   faceImg.style.height = h1 / 2 + "px";
+   let w = faceSize.getPropertyValue('width');
+   w = w.substring(0, w.length - 2);
+   w = w / 2;
+   let h = faceSize.getPropertyValue('height');
+   h = h.substring(0, h.length - 2);
+   h = h / 2;
+   faceImg.style.width = w + "px";
+   faceImg.style.height = h + "px";
 }
 
 //untoggle all buttons
