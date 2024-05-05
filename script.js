@@ -142,4 +142,4 @@ function letterCounter() {
 //execution
 
 const descr = document.getElementById("page-descr");
-descr.innerHTML = `I'm ${getMyAge()} y.o. full stack web developer from Boston, MA`;
+descr.innerHTML = `I'm a ${getMyAge()} y.o. full stack web developer from Boston, MA`;

@@ -162,8 +162,14 @@ main ul {
    box-shadow: 0 0 5px 5px #a7a7a733;
 }
 
-#projects .grid-container .item p:first-child {
-   margin-bottom: 10px;
+#projects .grid-container .item img:first-child {
+   max-width: fit-content;
+   height: 176.2px;
+   margin: 0 auto;
+}
+
+#projects .grid-container .item p:first-of-type {
+   margin: 20px 0 10px;
 }
 
 #blog {
