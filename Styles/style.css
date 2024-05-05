@@ -140,11 +140,12 @@ main ul {
 
 #projects {
    display: none;
+   overflow: auto;
 }
 
 #projects .grid-container {
    display: grid;
-   grid-template-columns: repeat(auto-fit, 400px);
+   grid-template-columns: repeat(auto-fit, minmax(180px, 400px));
    grid-template-rows: auto;
    grid-gap: 20px;     
 }
@@ -155,7 +156,7 @@ main ul {
    border-radius: 10px;
    display: flex;   
    flex-direction: column;
-   justify-content: space-between;
+   justify-content: space-between;      
 }
 
 #projects .grid-container .item:hover {
@@ -163,9 +164,9 @@ main ul {
 }
 
 #projects .grid-container .item img:first-child {
-   max-width: fit-content;
-   height: 176.2px;
-   margin: 0 auto;
+   max-width: 100%;
+   max-height: 176.2px;
+   margin: auto;
 }
 
 #projects .grid-container .item p:first-of-type {
@@ -221,4 +222,16 @@ main ul {
    cursor: pointer;
    box-shadow: 0 0 5px 5px #0000FF; 
    font-weight: 700;
+}
+
+@media only screen and (max-width: 864px) {
+   #contacts .form, #contacts form #submit {
+      width: 75%;
+   }
+}
+
+@media only screen and (max-width: 360px) {
+   #contacts .form, #contacts form #submit {
+      width: 95%;
+   }
 }

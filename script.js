@@ -1,6 +1,7 @@
 //variables
 
 const clickedColor = "#8A2BE2";
+let isPageOpened = false;
 
 //initialization
 
@@ -39,6 +40,9 @@ messageArea.addEventListener('keyup', letterCounter);
 const messageCount = document.getElementById("message-count");
 const maxMessageCount = messageCount.innerHTML;
 
+const windowResizing = window;
+windowResizing.addEventListener('resize', headerPositioning);
+
 //functions
 
 //get age between dates
@@ -68,10 +72,8 @@ function btnChange(btn) {
       btn.style.boxShadow = "0 0 5px 5px " + clickedColor;
       changeFaceSize();
       header.style.height = 'auto';
-      if (window.getComputedStyle(header).getPropertyValue('flex-direction') == "row") 
-         header.style.alignContent = "start";
-      else 
-         header.style.justifyContent = "start";
+      isPageOpened = true;
+      headerPositioning();
 
       //show page
       if (btn != null && btn.getAttribute('id') != null) {
@@ -80,6 +82,17 @@ function btnChange(btn) {
       } else {
          console.log("Something wrong");
          allBtnOff(btnArray);
+      }
+   }
+}
+
+function headerPositioning() {
+   if (isPageOpened) {
+      if (window.getComputedStyle(header).getPropertyValue('flex-direction') == "row") {
+         header.style.placeContent = "start center";
+      }
+      else {
+         header.style.placeContent = "center start";
       }
    }
 }
@@ -125,6 +138,7 @@ function stylesToNone() {
    pageProjects.style = 'none';
    pageBlog.style = 'none';
    pageContacts.style = 'none';
+   isPageOpened = false;
 }
 
 function goToMain() {
